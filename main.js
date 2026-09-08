@@ -239,11 +239,6 @@
           ["STATUS", "system diagnostics"],
           ["DEPENDENCE", "live dependence index"],
           ["WHOAMI", "operator identity"],
-          ["SLOGAN", "print project tagline"],
-          ["POSTER", "scroll to the poster"],
-          ["THESIS", "scroll to our thesis"],
-          ["CHECKLIST", "scroll to self-check"],
-          ["EXIT", "close terminal"],
         ].forEach(([cmd, desc]) =>
           printHTML(
             `  ${cmd.padEnd(12)}<span class="term__line--dim">${desc}</span>`,
