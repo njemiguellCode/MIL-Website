@@ -1,434 +1,659 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overreliance on Artificial Intelligence — Group 5–6 E-Portfolio</title>
-  <meta name="description" content="The Group 5–6 e-portfolio on the overreliance on artificial intelligence: a Media & Information Literacy performance task documenting our research, outputs, activities, and reflections." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231000A0'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%230AA9E7'/%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="menu.css" />
-  <noscript>
-    <style>
-      .boot { display: none !important; }
-      body.is-booting { overflow: auto !important; }
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .term { display: none !important; }
-    </style>
-  </noscript>
-</head>
-<body class="is-booting">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Overreliance on Artificial Intelligence — Group 5–6 E-Portfolio
+    </title>
+    <meta
+      name="description"
+      content="The Group 5–6 e-portfolio on the overreliance on artificial intelligence: a Media & Information Literacy performance task documenting our research, outputs, activities, and reflections."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231000A0'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%230AA9E7'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <noscript>
+      <style>
+        .boot {
+          display: none !important;
+        }
+        body.is-booting {
+          overflow: auto !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .term {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="is-booting">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Y2K boot sequence -->
-  <div class="boot" id="boot" aria-hidden="true">
-    <div class="boot__scan"></div>
-    <div class="boot__panel">
-      <div class="boot__head">
-        <span class="nav__glyph"></span>
-        <span class="boot__title">O.R.A.I. E-PORTFOLIO v3.0 — GROUP 5–6</span>
-        <span class="boot__cursor">▉</span>
-      </div>
-      <div class="boot__lines" id="bootLines">
-        <div class="boot__row"><span class="boot__label">GROUP 5–6 E-PORTFOLIO — MEDIA & INFORMATION LITERACY</span><span class="boot__lead"></span><span class="boot__muted">[ ACADEMIC PERFORMANCE TASK ]</span></div>
-      </div>
-      <div class="boot__progress">
-        <span class="boot__progress-label">LOADING</span>
-        <div class="boot__track"><div class="boot__fill" id="bootFill"></div></div>
-        <span class="boot__pct" id="bootPct">0%</span>
-      </div>
-    </div>
-    <p class="boot__skip">PRESS ANY KEY OR CLICK TO SKIP · TYPE <b>ORAI</b> FOR ABOUT THIS PROJECT ></p>
-  </div>
-
-  <!-- Hidden maintenance terminal - type ORAI to unlock -->
-  <div class="term" id="terminal" role="dialog" aria-modal="true" aria-label="O.R.A.I. maintenance terminal" aria-hidden="true">
-    <div class="term__scan" aria-hidden="true"></div>
-    <div class="term__panel">
-      <div class="term__head">
-        <span class="nav__glyph"></span>
-        <span class="term__title">O.R.A.I. MAINTENANCE TERMINAL — RESTRICTED</span>
-        <button type="button" class="term__close" id="termClose">CLOSE ✕</button>
-      </div>
-      <div class="term__body" id="termBody" aria-live="polite"></div>
-      <div class="term__foot">
-        <span>SESSION.ENCRYPTED</span>
-        <span class="term__foot-hint">TYPE HELP FOR COMMANDS</span>
-        <span class="dot dot--cyan"></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="atmosphere" aria-hidden="true">
-    <div class="atmosphere__base"></div>
-    <div class="blob blob--1"></div>
-    <div class="blob blob--2"></div>
-    <div class="blob blob--3"></div>
-    <div class="bubbles" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="grid-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
-
-  <header class="nav" id="top">
-    <div class="nav__inner">
-      <a class="nav__brand" href="index.html" aria-label="O.R.A.I. home">
-        <span class="nav__glyph" aria-hidden="true"></span>
-        <span class="nav__code">O.R.A.I.<span class="nav__code-sub">// E-PORTFOLIO.SYS</span></span>
-      </a>
-      <button class="nav__menu-btn" id="pmenuOpen" type="button" aria-haspopup="dialog" aria-controls="pmenu" aria-expanded="false" aria-label="Open navigation menu">
-        <span></span><span></span><span></span>
-      </button>
-      <button class="nav__sound" id="soundToggle" type="button" aria-pressed="false" aria-label="Interface sounds: off - activate to unmute">
-        <span class="nav__sound-eq" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="nav__sound-text">SND.OFF</span>
-      </button>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- ================= HERO — THE COVER ================= -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__frame container">
-        <img class="decor decor--hide-sm" src="assets/decor/sparkle.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:38%;--dy:4%;--ds:70px;--dr:10deg;--do:.55">
-        <img class="decor" src="assets/decor/swirl.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:2%;--dy:88%;--ds:96px;--dr:-6deg;--do:.4;--dd:1s">
-
-        <div class="masthead reveal">
-          <span><b>GROUP 5–6</b> E-PORTFOLIO</span>
-          <span class="masthead__dot">◆</span>
-          <span>MEDIA + INFORMATION</span>
-          <span class="masthead__fill"></span>
-          <span>AI CULTURE</span>
-          <span class="masthead__dot">◆</span>
-          <span>HUMAN × MACHINE</span>
-          <span class="masthead__fill"></span>
-          <span><span class="dot dot--green" aria-hidden="true"></span> SYSTEM ONLINE</span>
+    <!-- Y2K boot sequence -->
+    <div class="boot" id="boot" aria-hidden="true">
+      <div class="boot__scan"></div>
+      <div class="boot__panel">
+        <div class="boot__head">
+          <span class="nav__glyph"></span>
+          <span class="boot__title">O.R.A.I. E-PORTFOLIO v3.0 — GROUP 5–6</span>
+          <span class="boot__cursor">▉</span>
         </div>
-        <div>
-          <p class="hud hero__hud reveal">
-            <span class="dot dot--green" aria-hidden="true"></span>
-            MIL PORTFOLIO // 2026 — STATUS: ACADEMIC
-            <span class="hud__rule" aria-hidden="true"></span>
-            <span class="hud__id">FILE 01 — STUDENT PORTFOLIO</span>
-          </p>
-          <h1 class="hero__title" id="hero-title">
-            <span class="hero__line hero__line--chrome reveal" data-text="OVERRELIANCE">OVERRELIANCE</span>
-            <span class="hero__line hero__line--mid reveal">ON <em>ARTIFICIAL</em></span>
-            <span class="hero__line hero__line--sub reveal"><span class="hero__outline">INTELLIGENCE</span></span>
-          </h1>
-          <span class="hero__label hero__label--a" aria-hidden="true">PORTFOLIO / <b>01</b></span>
-          <span class="hero__label hero__label--b" aria-hidden="true">AI CULTURE — VOL.01</span>
-          <span class="hero__label hero__label--c" aria-hidden="true">GROUP 5–6 — <b>MIL PERFORMANCE TASK</b></span>
-          <p class="hero__lede reveal">
-            Machines are brilliant assistants and terrible authorities.
-            <strong>Group 5–6</strong> explores the quiet moment when we stop checking —
-            and how to keep human judgment exactly where it belongs:
-            <span class="text-cyan">in the loop.</span>
-          </p>
-          <div class="hero__actions reveal">
-            <a class="btn btn--primary" href="outputs.html">
-              Read the Outputs
-              <span class="btn__arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="btn btn--ghost" href="#poster">
-              <span class="dot dot--cyan" aria-hidden="true"></span>
-              View the Poster
-            </a>
-          </div>
-          <div class="hero__status reveal" role="list" aria-label="System status readout">
-            <span class="status-chip" role="listitem"><span class="dot dot--green"></span>CRITICAL.THINKING: ONLINE</span>
-            <span class="status-chip" role="listitem"><span class="dot dot--cyan"></span>TRUST.LEVEL: CALIBRATED</span>
-            <span class="status-chip" role="listitem"><span class="dot dot--orange"></span>AUTOPILOT: DETECTED</span>
+        <div class="boot__lines" id="bootLines">
+          <div class="boot__row">
+            <span class="boot__label"
+              >GROUP 5–6 E-PORTFOLIO — MEDIA & INFORMATION LITERACY</span
+            ><span class="boot__lead"></span
+            ><span class="boot__muted">[ ACADEMIC PERFORMANCE TASK ]</span>
           </div>
         </div>
-        <aside class="hero__cover reveal" aria-label="Group poster cover">
-          <span class="sticker hero__cover-tag">GROUP PROJECT ◆ 2026</span>
-          <div class="poster__glass">
-            <img src="assets/poster.png"
-                 alt="Group poster: a human silhouette stands before a glowing artificial intelligence interface in deep indigo and blue tones, under the title Overreliance on Artificial Intelligence."
-                 id="posterImg" width="1587" height="2245" />
+        <div class="boot__progress">
+          <span class="boot__progress-label">LOADING</span>
+          <div class="boot__track">
+            <div class="boot__fill" id="bootFill"></div>
           </div>
-        </aside>
-      </div>
-      <div class="hero__ticker" aria-hidden="true">
-        <div class="hero__ticker-track">
-          <span>QUESTION THE OUTPUT</span><i>◆</i><span>VERIFY BEFORE YOU TRUST</span><i>◆</i><span>HUMAN JUDGMENT IS NOT DEPRECATED</span><i>◆</i><span>AI ASSISTS — HUMANS DECIDE</span><i>◆</i>
-          <span>QUESTION THE OUTPUT</span><i>◆</i><span>VERIFY BEFORE YOU TRUST</span><i>◆</i><span>HUMAN JUDGMENT IS NOT DEPRECATED</span><i>◆</i><span>AI ASSISTS — HUMANS DECIDE</span><i>◆</i>
+          <span class="boot__pct" id="bootPct">0%</span>
         </div>
       </div>
-      <div class="giant giant--hero" aria-hidden="true">AI</div>
-    </section>
+      <p class="boot__skip">
+        PRESS ANY KEY OR CLICK TO SKIP · TYPE <b>ORAI</b> FOR ABOUT THIS PROJECT
+        >
+      </p>
+    </div>
 
-    <!-- ================= POSTER ================= -->
-      <img class="decor decor--hide-sm" src="assets/decor/star.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:2%;--dy:10%;--ds:64px;--dr:14deg;--do:.45">
-  <img class="decor" src="assets/decor/bubble.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:92%;--dy:70%;--ds:54px;--do:.4">
-<section class="poster-section" id="poster" aria-labelledby="poster-title">
-      <div class="giant giant--poster" aria-hidden="true">TRUST</div>
-      <div class="container poster__grid">
-        <div class="poster__copy">
-      <p class="hud reveal"><span class="dot dot--cyan" aria-hidden="true"></span>EXHIBIT.A // GROUP PROJECT VISUAL</p>
-          <span class="sec-num" aria-hidden="true">01</span>
-          <h2 class="section-title reveal" id="poster-title">The Poster</h2>
+    <!-- Hidden maintenance terminal - type ORAI to unlock -->
+    <div
+      class="term"
+      id="terminal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="O.R.A.I. maintenance terminal"
+      aria-hidden="true"
+    >
+      <div class="term__scan" aria-hidden="true"></div>
+      <div class="term__panel">
+        <div class="term__head">
+          <span class="nav__glyph"></span>
+          <span class="term__title"
+            >O.R.A.I. MAINTENANCE TERMINAL — RESTRICTED</span
+          >
+          <button type="button" class="term__close" id="termClose">
+            CLOSE ✕
+          </button>
+        </div>
+        <div class="term__body" id="termBody" aria-live="polite"></div>
+        <div class="term__foot">
+          <span>SESSION.ENCRYPTED</span>
+          <span class="term__foot-hint">TYPE HELP FOR COMMANDS</span>
+          <span class="dot dot--cyan"></span>
+        </div>
+      </div>
+    </div>
 
-          <div class="poster-copy reveal">
-            <h3 class="poster-copy__head">WHAT IS ARTIFICIAL INTELLIGENCE?</h3>
-            <p>
-              Artificial Intelligence (AI) is the capability of computational systems to
-              perform tasks typically associated with human intelligence, such as
-              learning, reasoning, problem-solving, perception, and decision-making.
-              It is a field of research in engineering, mathematics, and computer
-              science that develops and studies methods and software that enable
-              machines to perceive their environment and use learning and intelligence
-              to take actions that maximise their chances of achieving defined goals.
-            </p>
-            <p class="poster-copy__source">SOURCE: WIKIPEDIA (EN.WIKIPEDIA.ORG/WIKI/ARTIFICIAL_INTELLIGENCE)</p>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere__base"></div>
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+      <div class="bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span
+        ><span></span><span></span><span></span>
+      </div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="nav" id="top">
+      <div class="nav__inner">
+        <a class="nav__brand" href="index.html" aria-label="O.R.A.I. home">
+          <span class="nav__glyph" aria-hidden="true"></span>
+          <span class="nav__code"
+            >O.R.A.I.<span class="nav__code-sub">// E-PORTFOLIO.SYS</span></span
+          >
+        </a>
+        <button
+          class="nav__menu-btn"
+          id="pmenuOpen"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="pmenu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <button
+          class="nav__sound"
+          id="soundToggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Interface sounds: off - activate to unmute"
+        >
+          <span class="nav__sound-eq" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+          <span class="nav__sound-text">SND.OFF</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= HERO — THE COVER ================= -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__frame container">
+          <img
+            class="decor decor--hide-sm"
+            src="assets/decor/sparkle.svg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            style="--dx: 38%; --dy: 4%; --ds: 70px; --dr: 10deg; --do: 0.55"
+          />
+          <img
+            class="decor"
+            src="assets/decor/swirl.svg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            style="
+              --dx: 2%;
+              --dy: 88%;
+              --ds: 96px;
+              --dr: -6deg;
+              --do: 0.4;
+              --dd: 1s;
+            "
+          />
+
+          <div class="masthead reveal">
+            <span><b>GROUP 5–6</b> E-PORTFOLIO</span>
+            <span class="masthead__dot">◆</span>
+            <span>MEDIA + INFORMATION</span>
+            <span class="masthead__fill"></span>
+            <span>AI CULTURE</span>
+            <span class="masthead__dot">◆</span>
+            <span>HUMAN × MACHINE</span>
+            <span class="masthead__fill"></span>
+            <span
+              ><span class="dot dot--green" aria-hidden="true"></span> SYSTEM
+              ONLINE</span
+            >
           </div>
-
-          <div class="poster-copy reveal">
-            <h3 class="poster-copy__head">WHAT IS OVERRELIANCE ON A.I.?</h3>
-            <p>
-              Overreliance on AI is the behavioral tendency of human users to place
-              extreme trust in the output of artificial intelligence — accepting
-              generated content without verification and critical evaluation. It is
-              one of the biggest effects of AI being mainstream, occurring when
-              individuals transfer tasks to algorithms, assuming machine responses
-              are always accurate due to the confident tone of AI outputs, which
-              risks introducing undetected errors and threatens to break down human
-              analytical skills.
+          <div>
+            <p class="hud hero__hud reveal">
+              <span class="dot dot--green" aria-hidden="true"></span>
+              MIL PORTFOLIO // 2026 — STATUS: ACADEMIC
+              <span class="hud__rule" aria-hidden="true"></span>
+              <span class="hud__id">FILE 01 — STUDENT PORTFOLIO</span>
             </p>
-            <p class="poster-copy__source">SOURCE: STANFORD (HTTPS://HAI.STANFORD.EDU/NEWS/AI-OVERRELIANCE-PROBLEM-ARE-EXPLANATIONS-SOLUTION)</p>
+            <h1 class="hero__title" id="hero-title">
+              <span
+                class="hero__line hero__line--chrome reveal"
+                data-text="OVERRELIANCE"
+                >OVERRELIANCE</span
+              >
+              <span class="hero__line hero__line--mid reveal"
+                >ON <em>ARTIFICIAL</em></span
+              >
+              <span class="hero__line hero__line--sub reveal"
+                ><span class="hero__outline">INTELLIGENCE</span></span
+              >
+            </h1>
+            <span class="hero__label hero__label--a" aria-hidden="true"
+              >PORTFOLIO / <b>01</b></span
+            >
+            <span class="hero__label hero__label--b" aria-hidden="true"
+              >AI CULTURE — VOL.01</span
+            >
+            <span class="hero__label hero__label--c" aria-hidden="true"
+              >GROUP 5–6 — <b>MIL PERFORMANCE TASK</b></span
+            >
+            <p class="hero__lede reveal">
+              Machines are brilliant assistants and terrible authorities.
+              <strong>Group 5–6</strong> explores the quiet moment when we stop
+              checking — and how to keep human judgment exactly where it
+              belongs:
+              <span class="text-cyan">in the loop.</span>
+            </p>
+            <div
+              class="hero__status reveal"
+              role="list"
+              aria-label="System status readout"
+            >
+              <span class="status-chip" role="listitem"
+                ><span class="dot dot--green"></span>CRITICAL.THINKING:
+                ONLINE</span
+              >
+              <span class="status-chip" role="listitem"
+                ><span class="dot dot--cyan"></span>TRUST.LEVEL:
+                CALIBRATED</span
+              >
+              <span class="status-chip" role="listitem"
+                ><span class="dot dot--orange"></span>AUTOPILOT: DETECTED</span
+              >
+            </div>
           </div>
+          <aside class="hero__cover reveal" aria-label="Kangel GIF opened in a file explorer window">
+            <div class="explorer">
+              <div class="explorer__bar">
+                <span class="explorer__dot explorer__dot--r" aria-hidden="true"></span>
+                <span class="explorer__dot explorer__dot--y" aria-hidden="true"></span>
+                <span class="explorer__dot explorer__dot--g" aria-hidden="true"></span>
+                <span class="explorer__title">kangel.gif — Viewer</span>
+                <span class="explorer__glitch" aria-hidden="true">▚▞▚</span>
+              </div>
+              <div class="explorer__controls">
+                <span class="explorer__ctrl" aria-hidden="true">◀</span>
+                <span class="explorer__ctrl" aria-hidden="true">▶</span>
+                <span class="explorer__ctrl" aria-hidden="true">⟳</span>
+                <span class="explorer__addr">file:///C:/GIRL_OS/kangel.gif</span>
+              </div>
+              <div class="explorer__canvas">
+                <div class="explorer__scan" aria-hidden="true"></div>
+                <img
+                  src="assets/KANGEL.gif"
+                  alt="Animated Kangel GIF: a blue-and-white anime character with dark hair bows, bouncing and waving playfully against a light background."
+                  class="explorer__img"
+                  id="posterImg"
+                  width="1310"
+                  height="1060"
+                />
+              </div>
+              <div class="explorer__status">
+                <span>1310 × 1060</span>
+                <span>GIF · 256k</span>
+                <span class="explorer__live"><i aria-hidden="true"></i> LIVE</span>
+              </div>
+            </div>
+            <span class="sticker hero__cover-tag">// VIEWER_01</span>
+          </aside>
+        </div>
+        <div class="hero__ticker" aria-hidden="true">
+          <div class="hero__ticker-track">
+            <span>QUESTION THE OUTPUT</span><i>◆</i><span>VERIFY BEFORE YOU TRUST</span><i>◆</i><span>HUMAN JUDGMENT IS NOT DEPRECATED</span><i>◆</i><span>AI ASSISTS — HUMANS DECIDE</span><i>◆</i>
+            <span>QUESTION THE OUTPUT</span><i>◆</i><span>VERIFY BEFORE YOU TRUST</span><i>◆</i><span>HUMAN JUDGMENT IS NOT DEPRECATED</span><i>◆</i><span>AI ASSISTS — HUMANS DECIDE</span><i>◆</i>
+          </div>
+        </div>
+        <div class="giant giant--hero" aria-hidden="true">AI</div>
+      </section>
 
-          <div class="poster-copy reveal">
-            <h3 class="poster-copy__head">THE ISSUE</h3>
-            <p>
-              AI tools such as ChatGPT or Gemini are now everyday life for the
-              majority of people, used for work, homework, and even personal seeking
-              advice for personal decisions. But research shows this convenience and
-              heavy reliance on AI is gradually weakening people's ability to think
-              and reason for themselves, regardless of age or profession.
+      <!-- ================= SELF-CHECK ================= -->
+      <img
+        class="decor decor--hide-sm"
+        src="assets/decor/heart-bow.svg"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        style="--dx: 93%; --dy: 8%; --ds: 62px; --dr: 12deg; --do: 0.5"
+      />
+      <section class="signals scallop-top" id="signals" aria-labelledby="signals-title">
+        <div class="container signals__grid">
+          <div class="signals__copy">
+            <p class="hud reveal">
+              <span class="dot dot--cyan" aria-hidden="true"></span>SECTION.02
+              // ACTIVITY
             </p>
-            <h3 class="poster-copy__head poster-copy__head--tight">FACTS AND STATISTICS</h3>
-            <ul class="poster-copy__list">
-              <li><b>Fact.</b> Over-relying on AI can cause cognitive offloading, reducing a person's ability to analyze and evaluate information independently.</li>
-              <li><b>Stat.</b> Udewark Research Institute reports that 77% of employees say AI has increased their workload or pressure, encouraging reliance on unverified AI outputs.</li>
-              <li><b>Stat.</b> Pew Research Center found that 55% of adults believe relying on AI worsens creative thinking, with respondents accepting AI results without verification.</li>
+            <span class="sec-num" aria-hidden="true">02</span>
+            <h2 class="section-title reveal" id="signals-title">
+              Self-Check Activity
+            </h2>
+            <p class="reveal">
+              A quick self-diagnostic. Toggle each statement and watch your
+              dependence index. There is no score to submit — the point is
+              noticing, honestly, which statements feel familiar.
+            </p>
+            <div class="signals__readout glass reveal" aria-live="polite">
+              <p class="signals__readout-label">DEPENDENCE.INDEX</p>
+              <p class="signals__readout-value">
+                <span id="checkCount">0</span
+                ><span class="signals__readout-total">/ 6</span>
+              </p>
+              <p class="signals__readout-note" id="checkNote">
+                SYSTEM NOMINAL — JUDGMENT ONLINE
+              </p>
+              <div class="signals__meter" aria-hidden="true">
+                <div class="signals__meter-fill" id="checkMeter"></div>
+              </div>
+            </div>
+          </div>
+          <fieldset class="signals__list reveal">
+            <legend class="visually-hidden">Self-check statements</legend>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I accept an AI answer without reading the sources it may rest
+                on.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I ask AI first and think second, even for questions I could
+                reason through.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I feel uneasy completing a task without an AI assistant.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I stop double-checking outputs once a tool “seems
+                reliable”.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I submit AI-generated work I could not explain or defend
+                myself.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+            <label class="check glass">
+              <input type="checkbox" class="check__input" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text"
+                >I have lost patience with my own unassisted drafting or
+                calculation.</span
+              >
+              <span class="check__status" aria-hidden="true">OK</span>
+            </label>
+          </fieldset>
+        </div>
+      </section>
+
+      <!-- ================= RESOURCES / FAQ ================= -->
+      <img
+        class="decor decor--hide-sm"
+        src="assets/decor/star.svg"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        style="--dx: 94%; --dy: 12%; --ds: 52px; --dr: -16deg; --do: 0.45"
+      />
+      <section
+        class="resources scallop-top"
+        id="resources"
+        aria-labelledby="resources-title"
+      >
+        <div class="container resources__grid">
+          <div class="resources__links">
+            <p class="hud reveal">
+              <span class="dot dot--cyan" aria-hidden="true"></span>SECTION.03
+              // REFERENCES
+            </p>
+            <span class="sec-num" aria-hidden="true">03</span>
+            <h2 class="section-title reveal" id="resources-title">Resources</h2>
+            <p class="reveal">
+              Authoritative starting points on trustworthy, human-centred AI:
+            </p>
+            <ul class="link-list">
+              <li class="reveal">
+                <a
+                  href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >UNESCO — Recommendation on the Ethics of Artificial
+                  Intelligence<span aria-hidden="true"> ↗</span></a
+                >
+              </li>
+              <li class="reveal">
+                <a
+                  href="https://oecd.ai/en/ai-principles"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >OECD — AI Principles<span aria-hidden="true"> ↗</span></a
+                >
+              </li>
+              <li class="reveal">
+                <a
+                  href="https://www.nist.gov/itl/ai-risk-management-framework"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >NIST — AI Risk Management Framework<span aria-hidden="true">
+                    ↗</span
+                  ></a
+                >
+              </li>
+              <li class="reveal">
+                <a
+                  href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >European Commission — Ethics Guidelines for Trustworthy
+                  AI<span aria-hidden="true"> ↗</span></a
+                >
+              </li>
+              <li class="reveal">
+                <a
+                  href="https://law.stanford.edu/stanford-hai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Stanford HAI — Human-Centered Artificial Intelligence<span
+                    aria-hidden="true"
+                  >
+                    ↗</span
+                  ></a
+                >
+              </li>
             </ul>
-            <p class="poster-copy__source">SOURCES: UPWORK / PEW RESEARCH CENTER</p>
           </div>
-
-          <div class="poster-copy reveal">
-            <h3 class="poster-copy__head">WHAT WE SHOULD ALL DO</h3>
-            <ul class="poster-copy__list poster-copy__list--check">
-              <li>Try solving the problem and answering it by yourself first.</li>
-              <li>Use AI for guidance as a tool, not as an answer sheet.</li>
-              <li>Always double-check the information AI gives.</li>
-              <li>Compare AI answers with multiple reliable sources.</li>
-              <li>Add your own ideas and understanding rather than just copy and pasting.</li>
-              <li>Learn the skill instead of simply copying the result AI gives.</li>
-            </ul>
-          </div>
-
-          <div class="poster__meta reveal" role="list" aria-label="Poster specifications">
-            <span class="meta-item" role="listitem"><b>POSTER BY</b>GROUP 5–6 · 12-HE/ICT</span>
-            <span class="meta-item" role="listitem"><b>FORMAT</b>Print / Digital</span>
-            <span class="meta-item" role="listitem"><b>YEAR</b>2026</span>
+          <div class="resources__faq">
+            <h3 class="resources__faq-title reveal">
+              FREQUENT.QUESTIONS
+              <span class="resources__faq-sub">// FAQ.DB</span>
+            </h3>
+            <div class="faq">
+              <details class="faq__item glass reveal">
+                <summary>
+                  <span class="faq__q"
+                    >Isn't using AI just like using a calculator?</span
+                  ><span class="faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__a">
+                  <p>
+                    Partly — and the comparison is instructive. A calculator
+                    replaces one narrow, verifiable skill; general AI touches
+                    judgment, writing, and reasoning, where errors are subtle
+                    and verification is the very skill you'd be skipping. Use it
+                    like a calculator: for the parts you can check.
+                  </p>
+                </div>
+              </details>
+              <details class="faq__item glass reveal">
+                <summary>
+                  <span class="faq__q">Is all AI use overreliance?</span
+                  ><span class="faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__a">
+                  <p>
+                    No. Overreliance is specifically <em>uncalibrated</em> trust
+                    — accepting outputs without verification regardless of
+                    stakes. Using AI to brainstorm, accelerate drafts, or
+                    explore, while retaining review and responsibility, is
+                    healthy collaboration.
+                  </p>
+                </div>
+              </details>
+              <details class="faq__item glass reveal">
+                <summary>
+                  <span class="faq__q"
+                    >Why do confident answers make us trust more?</span
+                  ><span class="faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__a">
+                  <p>
+                    Fluency reads as truth. Human heuristics equate polished,
+                    confident delivery with competence — a bias automation
+                    inherits and amplifies. That is why verification, not vibes,
+                    must carry the weight.
+                  </p>
+                </div>
+              </details>
+              <details class="faq__item glass reveal">
+                <summary>
+                  <span class="faq__q"
+                    >What is the single best habit against overreliance?</span
+                  ><span class="faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__a">
+                  <p>
+                    Ask: “Could I explain and defend this if challenged?” If
+                    not, you are not done. One honest question, applied
+                    consistently, restores the human to the loop.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
-        <figure class="poster__frame reveal" id="posterFigure">
-          <div class="poster__glass" data-lightbox="assets/poster.png">
-            <img src="assets/poster.png"
-                 alt="Group poster: a human silhouette stands before a glowing artificial intelligence interface in deep indigo and blue tones, under the title Overreliance on Artificial Intelligence."
-                 width="1587" height="2245" />
-          </div>
-          <span class="sticker sticker--alt">EXHIBIT.A ◆ GROUP POSTER</span>
-          <figcaption class="poster__caption">
-            <span class="dot dot--green" aria-hidden="true"></span>
-            “OVERRELIANCE ON ARTIFICIAL INTELLIGENCE” — GROUP POSTER, 2026
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+      </section>
+    </main>
 
-
-
-    <!-- ================= SELF-CHECK ================= -->
-      <img class="decor decor--hide-sm" src="assets/decor/heart-bow.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:93%;--dy:8%;--ds:62px;--dr:12deg;--do:.5">
-<section class="signals" id="signals" aria-labelledby="signals-title">
-      <div class="container signals__grid">
-        <div class="signals__copy">
-          <p class="hud reveal"><span class="dot dot--cyan" aria-hidden="true"></span>SECTION.02 // ACTIVITY</p>
-          <span class="sec-num" aria-hidden="true">02</span>
-          <h2 class="section-title reveal" id="signals-title">Self-Check Activity</h2>
-          <p class="reveal">
-            A quick self-diagnostic. Toggle each statement and watch your
-            dependence index. There is no score to submit — the point is
-            noticing, honestly, which statements feel familiar.
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="contact">
+      <div class="footer__baseline">
+        <div class="container footer__baseline-inner">
+          <p>© 2026 GROUP 5–6 E-PORTFOLIO — EDUCATIONAL USE</p>
+          <p class="footer__build">
+            PORTFOLIO v3.0 // GROUP 5–6 <span class="dot dot--cyan"></span>
           </p>
-          <div class="signals__readout glass reveal" aria-live="polite">
-            <p class="signals__readout-label">DEPENDENCE.INDEX</p>
-            <p class="signals__readout-value"><span id="checkCount">0</span><span class="signals__readout-total">/ 6</span></p>
-            <p class="signals__readout-note" id="checkNote">SYSTEM NOMINAL — JUDGMENT ONLINE</p>
-            <div class="signals__meter" aria-hidden="true"><div class="signals__meter-fill" id="checkMeter"></div></div>
-          </div>
-        </div>
-        <fieldset class="signals__list reveal">
-          <legend class="visually-hidden">Self-check statements</legend>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I accept an AI answer without reading the sources it may rest on.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I ask AI first and think second, even for questions I could reason through.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I feel uneasy completing a task without an AI assistant.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I stop double-checking outputs once a tool “seems reliable”.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I submit AI-generated work I could not explain or defend myself.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-          <label class="check glass">
-            <input type="checkbox" class="check__input" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__text">I have lost patience with my own unassisted drafting or calculation.</span>
-            <span class="check__status" aria-hidden="true">OK</span>
-          </label>
-        </fieldset>
-      </div>
-    </section>
-
-
-    <!-- ================= RESOURCES / FAQ ================= -->
-      <img class="decor decor--hide-sm" src="assets/decor/star.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:94%;--dy:12%;--ds:52px;--dr:-16deg;--do:.45">
-<section class="resources" id="resources" aria-labelledby="resources-title">
-      <div class="container resources__grid">
-        <div class="resources__links">
-          <p class="hud reveal"><span class="dot dot--cyan" aria-hidden="true"></span>SECTION.03 // REFERENCES</p>
-          <span class="sec-num" aria-hidden="true">03</span>
-          <h2 class="section-title reveal" id="resources-title">Resources</h2>
-          <p class="reveal">Authoritative starting points on trustworthy, human-centred AI:</p>
-          <ul class="link-list">
-            <li class="reveal"><a href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics" target="_blank" rel="noopener noreferrer">UNESCO — Recommendation on the Ethics of Artificial Intelligence<span aria-hidden="true"> ↗</span></a></li>
-            <li class="reveal"><a href="https://oecd.ai/en/ai-principles" target="_blank" rel="noopener noreferrer">OECD — AI Principles<span aria-hidden="true"> ↗</span></a></li>
-            <li class="reveal"><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST — AI Risk Management Framework<span aria-hidden="true"> ↗</span></a></li>
-            <li class="reveal"><a href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai" target="_blank" rel="noopener noreferrer">European Commission — Ethics Guidelines for Trustworthy AI<span aria-hidden="true"> ↗</span></a></li>
-            <li class="reveal"><a href="https://law.stanford.edu/stanford-hai/" target="_blank" rel="noopener noreferrer">Stanford HAI — Human-Centered Artificial Intelligence<span aria-hidden="true"> ↗</span></a></li>
-          </ul>
-        </div>
-        <div class="resources__faq">
-          <h3 class="resources__faq-title reveal">FREQUENT.QUESTIONS <span class="resources__faq-sub">// FAQ.DB</span></h3>
-          <div class="faq">
-            <details class="faq__item glass reveal">
-              <summary><span class="faq__q">Isn't using AI just like using a calculator?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-              <div class="faq__a"><p>Partly — and the comparison is instructive. A calculator replaces one narrow, verifiable skill; general AI touches judgment, writing, and reasoning, where errors are subtle and verification is the very skill you'd be skipping. Use it like a calculator: for the parts you can check.</p></div>
-            </details>
-            <details class="faq__item glass reveal">
-              <summary><span class="faq__q">Is all AI use overreliance?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-              <div class="faq__a"><p>No. Overreliance is specifically <em>uncalibrated</em> trust — accepting outputs without verification regardless of stakes. Using AI to brainstorm, accelerate drafts, or explore, while retaining review and responsibility, is healthy collaboration.</p></div>
-            </details>
-            <details class="faq__item glass reveal">
-              <summary><span class="faq__q">Why do confident answers make us trust more?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-              <div class="faq__a"><p>Fluency reads as truth. Human heuristics equate polished, confident delivery with competence — a bias automation inherits and amplifies. That is why verification, not vibes, must carry the weight.</p></div>
-            </details>
-            <details class="faq__item glass reveal">
-              <summary><span class="faq__q">What is the single best habit against overreliance?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-              <div class="faq__a"><p>Ask: “Could I explain and defend this if challenged?” If not, you are not done. One honest question, applied consistently, restores the human to the loop.</p></div>
-            </details>
-          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer" id="contact">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <p class="footer__logo"><span class="nav__glyph" aria-hidden="true"></span>GROUP 5–6 // E-PORTFOLIO</p>
-        <p class="footer__tag">A student e-portfolio documenting Group 5–6’s research, outputs, activities, and reflections on the overreliance on artificial intelligence. Media & Information Literacy, 2026.</p>
-        <p class="footer__status"><span class="dot dot--green" aria-hidden="true"></span>ALL SYSTEMS THINKING</p>
+    <!-- P-MENU: Persona-style interactive navigation -->
+    <div
+      class="pmenu"
+      id="pmenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site navigation"
+      aria-hidden="true"
+    >
+      <div class="pmenu__mask" aria-hidden="true"></div>
+      <div class="pmenu__water" aria-hidden="true"></div>
+      <video
+        class="pmenu__video"
+        src="assets/menu.mp4"
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+      <div class="pmenu__bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span
+        ><span></span>
       </div>
-      <nav class="footer__nav" aria-label="Footer">
-        <h4>INDEX</h4>
-        <a href="index.html">Cover</a>
-        <a href="outputs.html">Outputs</a>
-        <a href="synthesis.html">Synthesis</a>
-      </nav>
-      <div class="footer__contact">
-        <h4>CONTACT.CHANNEL</h4>
-        <a class="footer__mail" href="mailto:group56.mil@gmail.com">group56.mil@gmail.com</a>
-        <p class="footer__meta">RESPONSE.TIME: 1–2 SOLAR DAYS</p>
-        <p class="footer__meta">UPLINK: OPEN // HUMAN ATTENDED</p>
+      <div class="pmenu__inner">
+        <div class="pmenu__head">
+          <span class="nav__glyph" aria-hidden="true"></span>
+          <span><b>O.R.A.I.</b> NAV.SYS</span>
+          <span class="pmenu__head-fill"></span>
+          <span class="pmenu__date"
+            ><span id="pmenuDate">-- --</span
+            ><span class="pmenu__date-sep"></span
+            ><span class="pmenu__date-day" id="pmenuDay">---</span
+            ><span class="pmenu__date-sep"></span
+            ><span class="pmenu__date-time" id="pmenuClock">--:--</span></span
+          >
+          <button type="button" class="pmenu__close" id="pmenuClose">
+            CLOSE ✕
+          </button>
+        </div>
+        <ul class="pmenu__list" id="pmenuList">
+          <li
+            class="pmenu__item"
+            data-href="index.html"
+            tabindex="0"
+            role="link"
+          >
+            <span class="pmenu__idx">01</span>HOME
+          </li>
+          <li
+            class="pmenu__item"
+            data-href="outputs.html"
+            tabindex="0"
+            role="link"
+          >
+            <span class="pmenu__idx">02</span>GROUP OUTPUTS
+          </li>
+          <li
+            class="pmenu__item"
+            data-href="synthesis.html"
+            tabindex="0"
+            role="link"
+          >
+            <span class="pmenu__idx">03</span>SYNTHESIS
+          </li>
+          <li
+            class="pmenu__item"
+            data-href="synthesis.html#team"
+            tabindex="0"
+            role="link"
+          >
+            <span class="pmenu__idx">04</span>MEET THE TEAM
+          </li>
+        </ul>
+        <div class="pmenu__foot">
+          <span class="dot dot--cyan" aria-hidden="true"></span>
+          <span>NAV.SYS v3.0</span>
+          <span class="pmenu__foot-fill"></span>
+          <span>↑↓ NAVIGATE · ENTER SELECT · ESC CLOSE</span>
+        </div>
+        <svg
+          class="pmenu__cursor"
+          id="pmenuCursor"
+          viewBox="0 0 40 40"
+          aria-hidden="true"
+        >
+          <polygon
+            class="pmenu__cursor-shape"
+            points="2,8 36,20 10,30"
+            fill="#FCFCFD"
+          />
+          <polygon
+            class="pmenu__cursor-shape pmenu__cursor-shape--accent"
+            points="2,8 36,20 10,30"
+            fill="#0AA9E7"
+          />
+        </svg>
       </div>
     </div>
-    <div class="footer__baseline">
-      <div class="container footer__baseline-inner">
-        <p>© 2026 GROUP 5–6 E-PORTFOLIO — EDUCATIONAL USE</p>
-        <p class="footer__build">PORTFOLIO v3.0 // GROUP 5–6 <span class="dot dot--cyan"></span></p>
-      </div>
+
+    <!-- page transition wipe -->
+    <div class="pagewipe" id="pagewipe" aria-hidden="true">
+      <span class="pagewipe__label" id="pagewipeLabel"></span>
     </div>
-  </footer>
 
-
-  <!-- P-MENU: Persona-style interactive navigation -->
-  <div class="pmenu" id="pmenu" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
-    <div class="pmenu__mask" aria-hidden="true"></div>
-    <div class="pmenu__water" aria-hidden="true"></div>
-    <video class="pmenu__video" src="assets/menu.mp4" muted loop playsinline preload="auto" aria-hidden="true"></video>
-    <div class="pmenu__bubbles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="pmenu__inner">
-      <div class="pmenu__head">
-        <span class="nav__glyph" aria-hidden="true"></span>
-        <span><b>O.R.A.I.</b> NAV.SYS</span>
-        <span class="pmenu__head-fill"></span>
-        <span class="pmenu__date"><span id="pmenuDate">-- --</span><span class="pmenu__date-sep"></span><span class="pmenu__date-day" id="pmenuDay">---</span><span class="pmenu__date-sep"></span><span class="pmenu__date-time" id="pmenuClock">--:--</span></span>
-        <button type="button" class="pmenu__close" id="pmenuClose">CLOSE ✕</button>
-      </div>
-      <ul class="pmenu__list" id="pmenuList">
-        <li class="pmenu__item" data-href="index.html" tabindex="0" role="link"><span class="pmenu__idx">01</span>HOME</li>
-        <li class="pmenu__item" data-href="outputs.html" tabindex="0" role="link"><span class="pmenu__idx">02</span>GROUP OUTPUTS</li>
-        <li class="pmenu__item" data-href="synthesis.html" tabindex="0" role="link"><span class="pmenu__idx">03</span>SYNTHESIS</li>
-        <li class="pmenu__item" data-href="synthesis.html#team" tabindex="0" role="link"><span class="pmenu__idx">04</span>MEET THE TEAM</li>
-      </ul>
-      <div class="pmenu__foot">
-        <span class="dot dot--cyan" aria-hidden="true"></span>
-        <span>NAV.SYS v3.0</span>
-        <span class="pmenu__foot-fill"></span>
-        <span>↑↓ NAVIGATE · ENTER SELECT · ESC CLOSE</span>
-      </div>
-      <svg class="pmenu__cursor" id="pmenuCursor" viewBox="0 0 40 40" aria-hidden="true">
-        <polygon class="pmenu__cursor-shape" points="2,8 36,20 10,30" fill="#FCFCFD"/><polygon class="pmenu__cursor-shape pmenu__cursor-shape--accent" points="2,8 36,20 10,30" fill="#0AA9E7"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- page transition wipe -->
-  <div class="pagewipe" id="pagewipe" aria-hidden="true">
-    <span class="pagewipe__label" id="pagewipeLabel"></span>
-  </div>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
