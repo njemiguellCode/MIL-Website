@@ -1,18 +1,32 @@
 /* ============================================================
-   O.R.A.I. — interactions
+   O.R.A.I. - interactions
    Boot sequence · reveal on scroll · scrollspy · self-check · nav
    ============================================================ */
 (() => {
   "use strict";
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   /* ---------- Retro UI sound engine (WebAudio synth, no assets) ---------- */
   const SoundFX = (() => {
     const KEY = "orai-sound";
     const store = {
-      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
-      set(k, v) { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
+      get(k) {
+        try {
+          return localStorage.getItem(k);
+        } catch {
+          return null;
+        }
+      },
+      set(k, v) {
+        try {
+          localStorage.setItem(k, v);
+        } catch {
+          /* private mode */
+        }
+      },
     };
     let muted = store.get(KEY) === "off";
     let ctx = null;
@@ -30,11 +44,18 @@
     };
 
     const unlock = () => {
-      if (ensureCtx() && ctx.state === "suspended") ctx.resume().catch(() => {});
+      if (ensureCtx() && ctx.state === "suspended")
+        ctx.resume().catch(() => {});
     };
 
     const tone = (freq, opts) => {
-      const { type = "sine", dur = 0.1, gain = 0.5, delay = 0, slide = null } = opts || {};
+      const {
+        type = "sine",
+        dur = 0.1,
+        gain = 0.5,
+        delay = 0,
+        slide = null,
+      } = opts || {};
       if (muted || !ensureCtx() || ctx.state !== "running") return;
       const t0 = ctx.currentTime + delay;
       const osc = ctx.createOscillator();
@@ -91,7 +112,12 @@
           break;
         case "enter":
           [523.25, 659.25, 783.99, 1046.5].forEach((f, i) =>
-            tone(f, { type: "triangle", dur: 0.16, gain: 0.45, delay: i * 0.06 })
+            tone(f, {
+              type: "triangle",
+              dur: 0.16,
+              gain: 0.45,
+              delay: i * 0.06,
+            }),
           );
           hiss({ dur: 0.25, from: 300, to: 2200, gain: 0.16 });
           break;
@@ -127,8 +153,14 @@
   })();
 
   // Browsers start audio suspended until a gesture - unlock on first input
-  window.addEventListener("pointerdown", () => SoundFX.unlock(), { once: true, capture: true });
-  window.addEventListener("keydown", () => SoundFX.unlock(), { once: true, capture: true });
+  window.addEventListener("pointerdown", () => SoundFX.unlock(), {
+    once: true,
+    capture: true,
+  });
+  window.addEventListener("keydown", () => SoundFX.unlock(), {
+    once: true,
+    capture: true,
+  });
 
   /* ---------- Reveal on scroll (armed after boot) ---------- */
   const initReveals = () => {
@@ -148,7 +180,10 @@
     groups.forEach((els) => {
       els.forEach((el, i) => {
         if (els.length > 1 && els.length <= 6) {
-          el.style.setProperty("--reveal-delay", `${Math.min(i * 0.09, 0.45)}s`);
+          el.style.setProperty(
+            "--reveal-delay",
+            `${Math.min(i * 0.09, 0.45)}s`,
+          );
         }
       });
     });
@@ -162,7 +197,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
     revealEls.forEach((el) => revealObserver.observe(el));
@@ -209,25 +244,67 @@
           ["THESIS", "scroll to our thesis"],
           ["CHECKLIST", "scroll to self-check"],
           ["EXIT", "close terminal"],
-        ].forEach(([cmd, desc]) => printHTML(`  ${cmd.padEnd(12)}<span class="term__line--dim">${desc}</span>`));
+        ].forEach(([cmd, desc]) =>
+          printHTML(
+            `  ${cmd.padEnd(12)}<span class="term__line--dim">${desc}</span>`,
+          ),
+        );
       },
       status: () => {
         print("NEURAL LINK ............ STABLE", "ok");
         print("TRUST.CALIBRATION ...... NOMINAL", "ok");
-        print("AUTOPILOT .............. DETECTED — ADVISORY", "warn");
-        print("HUMAN IN THE LOOP ...... " + (checks.length ? String(checks.filter((c) => c.checked).length) + " WARNINGS LOGGED" : "UNKNOWN"), "sys");
-        print("UPTIME ................. " + Math.round(performance.now() / 1000) + "s", "dim");
+        print("AUTOPILOT .............. DETECTED - ADVISORY", "warn");
+        print(
+          "HUMAN IN THE LOOP ...... " +
+            (checks.length
+              ? String(checks.filter((c) => c.checked).length) +
+                " WARNINGS LOGGED"
+              : "UNKNOWN"),
+          "sys",
+        );
+        print(
+          "UPTIME ................. " +
+            Math.round(performance.now() / 1000) +
+            "s",
+          "dim",
+        );
       },
       dependence: () => {
         const n = checks.length ? checks.filter((c) => c.checked).length : 0;
-        const notes = ["SYSTEM NOMINAL — JUDGMENT ONLINE", "LOW DEPENDENCE — STAY VIGILANT", "CALIBRATION ADVISED", "DRIFT DETECTED", "HIGH DEPENDENCE — REASSERT CONTROL", "CRITICAL — AUTOPILOT HAS THE WHEEL", "MAXIMUM OVERDRIVE"];
-        print(`DEPENDENCE.INDEX: ${n}/6 — ${notes[Math.min(n, notes.length - 1)]}`, n >= 4 ? "warn" : n >= 2 ? "sys" : "ok");
+        const notes = [
+          "SYSTEM NOMINAL - JUDGEMENT ONLINE",
+          "LOW DEPENDENCE - STAY VIGILANT",
+          "CALIBRATION ADVISED",
+          "DRIFT DETECTED",
+          "HIGH DEPENDENCE - REASSERT CONTROL",
+          "CRITICAL - AUTOPILOT HAS THE WHEEL",
+          "MAXIMUM OVERDRIVE",
+        ];
+        print(
+          `DEPENDENCE.INDEX: ${n}/6 - ${notes[Math.min(n, notes.length - 1)]}`,
+          n >= 4 ? "warn" : n >= 2 ? "sys" : "ok",
+        );
       },
-      whoami: () => print("HUMAN OPERATOR — CLEARANCE: CURIOUS", "ok"),
+      whoami: () => print("HUMAN OPERATOR - CLEARANCE: CURIOUS", "ok"),
       slogan: () => print("TRUST THE MACHINE. VERIFY LIKE A HUMAN.", "sys"),
-      poster: () => { closeTerminal(); document.querySelector('#poster')?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" }); },
-      thesis: () => { closeTerminal(); document.querySelector('#manifesto')?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" }); },
-      checklist: () => { closeTerminal(); document.querySelector('#signals')?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" }); },
+      poster: () => {
+        closeTerminal();
+        document.querySelector("#poster")?.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      },
+      thesis: () => {
+        closeTerminal();
+        document.querySelector("#manifesto")?.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      },
+      checklist: () => {
+        closeTerminal();
+        document.querySelector("#signals")?.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      },
       exit: () => closeTerminal(),
     };
 
@@ -237,11 +314,24 @@
       print(raw, "in");
       const fn = COMMANDS[cmd];
       if (fn) {
-        if (cmd !== "exit" && !cmd.startsWith("poster") && !cmd.startsWith("thesis") && !cmd.startsWith("checklist")) SoundFX.play(cmd === "help" || cmd === "status" || cmd === "dependence" ? "confirm" : "tick");
+        if (
+          cmd !== "exit" &&
+          !cmd.startsWith("poster") &&
+          !cmd.startsWith("thesis") &&
+          !cmd.startsWith("checklist")
+        )
+          SoundFX.play(
+            cmd === "help" || cmd === "status" || cmd === "dependence"
+              ? "confirm"
+              : "tick",
+          );
         fn();
       } else {
         SoundFX.play("warn");
-        print(`UNKNOWN COMMAND: ${cmd.toUpperCase()} — TYPE HELP FOR COMMANDS`, "warn");
+        print(
+          `UNKNOWN COMMAND: ${cmd.toUpperCase()} - TYPE HELP FOR COMMANDS`,
+          "warn",
+        );
       }
     };
 
@@ -300,9 +390,12 @@
     }
 
     closeBtn.addEventListener("click", closeTerminal);
-    term.addEventListener("pointerdown", (e) => { if (e.target === term) closeTerminal(); });
+    term.addEventListener("pointerdown", (e) => {
+      if (e.target === term) closeTerminal();
+    });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && term.classList.contains("is-open")) closeTerminal();
+      if (e.key === "Escape" && term.classList.contains("is-open"))
+        closeTerminal();
     });
 
     // Expose for the ORAI unlock
@@ -330,10 +423,16 @@
     return true;
   };
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { oraiBuffer = ""; return; }
+    if (e.key === "Escape") {
+      oraiBuffer = "";
+      return;
+    }
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key.length !== 1) return;
-    if (pushOraiKey(e.key) === "hit" && !document.body.classList.contains("is-booting")) {
+    if (
+      pushOraiKey(e.key) === "hit" &&
+      !document.body.classList.contains("is-booting")
+    ) {
       oraiPending = false;
       tryOpenTerminal();
     }
@@ -342,8 +441,20 @@
   /* ---------- Y2K boot sequence ---------- */
   const boot = document.getElementById("boot");
   const safeStore = {
-    get(key) { try { return sessionStorage.getItem(key); } catch { return null; } },
-    set(key, value) { try { sessionStorage.setItem(key, value); } catch { /* private mode */ } },
+    get(key) {
+      try {
+        return sessionStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    },
+    set(key, value) {
+      try {
+        sessionStorage.setItem(key, value);
+      } catch {
+        /* private mode */
+      }
+    },
   };
 
   const finishBoot = () => {
@@ -351,7 +462,9 @@
     document.body.classList.remove("is-booting");
     if (boot && boot.isConnected) {
       boot.classList.add("is-done");
-      boot.addEventListener("transitionend", () => boot.remove(), { once: true });
+      boot.addEventListener("transitionend", () => boot.remove(), {
+        once: true,
+      });
       setTimeout(() => boot.isConnected && boot.remove(), 900); // failsafe if transitions never fire
     }
     initReveals(); // hero rises as the screen lifts
@@ -375,7 +488,7 @@
       ["CHECKING NEURAL LINK", "OK", "ok"],
       ["CHECKING CRITICAL.THINKING", "OK", "ok"],
       ["CHECKING TRUST.CALIBRATION", "OK", "ok"],
-      ["CHECKING AUTOPILOT", "DETECTED — ADVISORY", "warn"],
+      ["CHECKING AUTOPILOT", "DETECTED - ADVISORY", "warn"],
       ["LOADING GROUP.POSTER", "OK", "ok"],
       ["LOADING THESIS.DB", "OK", "ok"],
       ["HUMAN IN THE LOOP", "CONFIRMED", "go"],
@@ -409,7 +522,9 @@
       if (index < SEQUENCE.length) {
         const [label, status, cls] = SEQUENCE[index];
         addRow(label, status, cls);
-        SoundFX.play(cls === "warn" ? "warn" : cls === "go" ? "confirm" : "tick");
+        SoundFX.play(
+          cls === "warn" ? "warn" : cls === "go" ? "confirm" : "tick",
+        );
         index += 1;
         const pct = Math.round((index / SEQUENCE.length) * 94);
         fillEl.style.width = `${pct}%`;
@@ -418,12 +533,12 @@
         clearInterval(lineTimer);
         fillEl.style.width = "100%";
         pctEl.textContent = "100%";
-        addRow("SYSTEM READY — WELCOME BACK, HUMAN", "ENTER", "ok");
+        addRow("SYSTEM READY - WELCOME BACK, HUMAN", "ENTER", "ok");
         setTimeout(endBoot, ENTER_DELAY);
       }
     }, LINE_DELAY);
 
-    // Skippable: any key or click jumps straight in — except keys that keep
+    // Skippable: any key or click jumps straight in - except keys that keep
     // the ORAI code alive, which hold the boot instead
     const bootKeyListener = (e) => {
       if (e.key.length === 1 && !e.altKey && !e.ctrlKey && !e.metaKey) {
@@ -457,7 +572,7 @@
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { rootMargin: "-38% 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-38% 0px -55% 0px", threshold: 0 },
     );
     sections.forEach((s) => spyObserver.observe(s));
 
@@ -470,7 +585,7 @@
             if (entry.isIntersecting) setActive("");
           });
         },
-        { rootMargin: "-38% 0px -55% 0px", threshold: 0 }
+        { rootMargin: "-38% 0px -55% 0px", threshold: 0 },
       ).observe(hero);
     }
   }
@@ -483,30 +598,30 @@
 
   if (checks.length && countEl && noteEl && meterEl) {
     const notes = [
-      "SYSTEM NOMINAL — JUDGMENT ONLINE",
-      "LOW DEPENDENCE — STAY VIGILANT",
-      "CALIBRATION ADVISED — RECHECK HABITS",
-      "DRIFT DETECTED — REASSERT CONTROL",
-      "HIGH DEPENDENCE — HUMAN IN DANGER OF EXITING LOOP",
-      "CRITICAL — AUTOPILOT HAS THE WHEEL",
-      "MAXIMUM OVERDRIVE — TIME TO TAKE THE WHEEL BACK",
+      "SYSTEM NOMINAL - JUDGEMENT ONLINE",
+      "LOW DEPENDENCE - STAY VIGILANT",
+      "CALIBRATION ADVISED - RECHECK HABITS",
+      "DRIFT DETECTED - REASSERT CONTROL",
+      "HIGH DEPENDENCE - HUMAN IN DANGER OF EXITING LOOP",
+      "CRITICAL - AUTOPILOT HAS THE WHEEL",
+      "MAXIMUM OVERDRIVE - TIME TO TAKE THE WHEEL BACK",
     ];
     const update = () => {
       const n = checks.filter((c) => c.checked).length;
       countEl.textContent = String(n);
       noteEl.textContent = notes[Math.min(n, notes.length - 1)];
       meterEl.style.width = `${(n / checks.length) * 100}%`;
-      noteEl.style.color = n >= 4 ? "var(--orange-red)" : n >= 2 ? "var(--cyan)" : "var(--green)";
+      noteEl.style.color =
+        n >= 4 ? "var(--orange-red)" : n >= 2 ? "var(--cyan)" : "var(--green)";
     };
     checks.forEach((c) =>
       c.addEventListener("change", () => {
         SoundFX.play(c.checked ? "toggleOn" : "toggleOff");
         update();
-      })
+      }),
     );
     update();
   }
-
 
   /* ---------- FAQ: close other items when one opens ---------- */
   const faqItems = Array.from(document.querySelectorAll(".faq__item"));
@@ -514,7 +629,9 @@
     item.addEventListener("toggle", () => {
       if (item.open) {
         SoundFX.play("whoosh");
-        faqItems.forEach((other) => { if (other !== item) other.open = false; });
+        faqItems.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
       }
     });
   });
@@ -530,10 +647,15 @@
     const applySoundUI = () => {
       const on = SoundFX.enabled();
       soundBtn.setAttribute("aria-pressed", String(on));
-      soundBtn.setAttribute("aria-label", on
-        ? "Interface sounds: on - activate to mute"
-        : "Interface sounds: off - activate to unmute");
-      soundBtn.querySelector(".nav__sound-text").textContent = on ? "SND.ON" : "SND.OFF";
+      soundBtn.setAttribute(
+        "aria-label",
+        on
+          ? "Interface sounds: on - activate to mute"
+          : "Interface sounds: off - activate to unmute",
+      );
+      soundBtn.querySelector(".nav__sound-text").textContent = on
+        ? "SND.ON"
+        : "SND.OFF";
     };
     applySoundUI();
     soundBtn.addEventListener("click", () => {
@@ -574,7 +696,8 @@
   });
   lightbox.addEventListener("click", closeLightbox);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+    if (e.key === "Escape" && lightbox.classList.contains("is-open"))
+      closeLightbox();
   });
 
   /* ---------- Placeholder art for missing output images ---------- */
@@ -588,12 +711,17 @@
         slot.style.cursor = "default";
       }
     });
-    if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event("error"));
+    if (img.complete && img.naturalWidth === 0)
+      img.dispatchEvent(new Event("error"));
   });
 
   /* ---------- Poster tilt sheen (pointer fine only) ---------- */
   const posterGlass = document.querySelector(".poster__glass");
-  if (posterGlass && window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
+  if (
+    posterGlass &&
+    window.matchMedia("(pointer: fine)").matches &&
+    !prefersReducedMotion
+  ) {
     posterGlass.addEventListener("pointermove", (e) => {
       const rect = posterGlass.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
@@ -632,12 +760,15 @@
       if (instant || !curAnim) {
         cursor.style.transition = instant ? "none" : "";
         cursor.style.transform = `translate(${targetX}px, ${targetY}px) scale(${scale})`;
-        if (instant) requestAnimationFrame(() => (cursor.style.transition = ""));
+        if (instant)
+          requestAnimationFrame(() => (cursor.style.transition = ""));
         return;
       }
       const cs = getComputedStyle(cursor).transform;
       const m = new DOMMatrixReadOnly(cs === "none" ? "" : cs);
-      const fromX = m.m41, fromY = m.m42, fromS = m.a;
+      const fromX = m.m41,
+        fromY = m.m42,
+        fromS = m.a;
       const t0 = performance.now();
       const DUR = 260;
       cursor.classList.add("is-moving", "is-flipping");
@@ -648,8 +779,13 @@
         const y = fromY + (targetY - fromY) * e;
         const sc = fromS + (scale - fromS) * e;
         cursor.style.transform = `translate(${x}px, ${y}px) scale(${sc})`;
-        if (t < 1) { curAnim = requestAnimationFrame(step); }
-        else { curAnim = null; cursor.classList.remove("is-moving"); setTimeout(() => cursor.classList.remove("is-flipping"), 250); }
+        if (t < 1) {
+          curAnim = requestAnimationFrame(step);
+        } else {
+          curAnim = null;
+          cursor.classList.remove("is-moving");
+          setTimeout(() => cursor.classList.remove("is-flipping"), 250);
+        }
       };
       if (curAnim) cancelAnimationFrame(curAnim);
       curAnim = requestAnimationFrame(step);
@@ -673,11 +809,34 @@
     /* --- date + time readout (P3R-style top-right) --- */
     const dateEl = document.getElementById("pmenuDate");
     const dayEl = document.getElementById("pmenuDay");
-    const MONTHS = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
-    const DAYS = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+    const MONTHS = [
+      "JANUARY",
+      "FEBRUARY",
+      "MARCH",
+      "APRIL",
+      "MAY",
+      "JUNE",
+      "JULY",
+      "AUGUST",
+      "SEPTEMBER",
+      "OCTOBER",
+      "NOVEMBER",
+      "DECEMBER",
+    ];
+    const DAYS = [
+      "SUNDAY",
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY",
+      "SATURDAY",
+    ];
     const tickClock = () => {
       const d = new Date();
-      clockEl.textContent = [d.getHours(), d.getMinutes()].map((n) => String(n).padStart(2, "0")).join(":");
+      clockEl.textContent = [d.getHours(), d.getMinutes()]
+        .map((n) => String(n).padStart(2, "0"))
+        .join(":");
       if (dateEl) dateEl.textContent = `${d.getDate()} ${MONTHS[d.getMonth()]}`;
       if (dayEl) dayEl.textContent = DAYS[d.getDay()];
     };
@@ -697,12 +856,14 @@
       SoundFX.play("whoosh");
       openObservers.forEach((o) => o.on());
       const here = location.pathname.split("/").pop() + (location.hash || "");
-      const current = items.findIndex((it) => it.getAttribute("data-href") === here);
+      const current = items.findIndex(
+        (it) => it.getAttribute("data-href") === here,
+      );
       setFocus(current >= 0 ? current : 0, true);
       setTimeout(() => items[focusIdx].focus({ preventScroll: true }), 380);
     };
 
-    const closeMenu = (cb) => {
+    const closeMenu = (cb, delay = 560) => {
       if (!menuOpen) return;
       menuOpen = false;
       pmenu.classList.add("is-closing");
@@ -712,18 +873,32 @@
       document.body.style.overflow = "";
       SoundFX.play("click");
       openObservers.forEach((o) => o.off());
+
+      wipeLabel.textContent = "NAV.SYS";
+      wipe.classList.add("is-active");
+      void wipe.offsetWidth;
+      wipe.classList.add("is-in");
+
       setTimeout(() => {
-        pmenu.classList.remove("is-closing");
-        if (cb) cb();
-        else if (lastFocus && lastFocus.isConnected) lastFocus.focus({ preventScroll: true });
-      }, 560);
+        wipe.classList.remove("is-in");
+        wipe.classList.add("is-out");
+        setTimeout(() => {
+          wipe.classList.remove("is-active", "is-out");
+          pmenu.classList.remove("is-closing");
+          if (cb) cb();
+          else if (lastFocus && lastFocus.isConnected)
+            lastFocus.focus({ preventScroll: true });
+        }, 420);
+      }, delay - 150);
     };
 
     /* --- page navigation with circular wipe --- */
     const navigateTo = (href) => {
       const [path, hash] = href.split("#");
       const item = items.find((it) => it.getAttribute("data-href") === href);
-      const label = item ? item.textContent.replace(/^\d+/, "").trim() : "LOADING";
+      const label = item
+        ? item.textContent.replace(/^\d+/, "").trim()
+        : "LOADING";
       const samePage = path === location.pathname.split("/").pop();
       wipeLabel.textContent = label;
       wipe.classList.add("is-active");
@@ -733,7 +908,10 @@
       setTimeout(() => {
         if (samePage && hash) {
           const target = document.getElementById(hash);
-          if (target) target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
+          if (target)
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+            });
           wipe.classList.remove("is-in");
           wipe.classList.add("is-out");
           setTimeout(() => wipe.classList.remove("is-active", "is-out"), 700);
@@ -743,40 +921,68 @@
       }, 620);
     };
 
+    const selectItem = (it) => {
+      items.forEach((item) => {
+        item.classList.remove("is-selecting", "is-leaving");
+      });
+      it.classList.add("is-selecting");
+      setFocus(items.indexOf(it));
+      if (menuOpen) {
+        closeMenu(() => navigateTo(it.getAttribute("data-href")), 120);
+      }
+    };
+
     items.forEach((it) => {
       it.addEventListener("pointerenter", () => setFocus(items.indexOf(it)));
-      it.addEventListener("click", () => {
-        it.classList.add("is-leaving");
-        closeMenu(() => navigateTo(it.getAttribute("data-href")));
-      });
+      it.addEventListener("click", () => selectItem(it));
       it.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          it.classList.add("is-leaving");
-          closeMenu(() => navigateTo(it.getAttribute("data-href")));
+          selectItem(it);
         }
       });
     });
 
     openBtn.addEventListener("click", openMenu);
-    closeBtn.addEventListener("click", () => closeMenu());
-    pmenu.addEventListener("pointerdown", (e) => { if (e.target === pmenu) closeMenu(); });
+    closeBtn.addEventListener("click", () => {
+      items.forEach((item) =>
+        item.classList.remove("is-selecting", "is-leaving"),
+      );
+      closeMenu();
+    });
+    pmenu.addEventListener("pointerdown", (e) => {
+      if (e.target === pmenu) closeMenu();
+    });
     document.addEventListener("keydown", (e) => {
       if (!menuOpen) {
-        if ((e.key === "m" || e.key === "M") && !e.altKey && !e.ctrlKey && !e.metaKey
-            && !/INPUT|TEXTAREA/.test(document.activeElement?.tagName || "")) {
+        if (
+          (e.key === "m" || e.key === "M") &&
+          !e.altKey &&
+          !e.ctrlKey &&
+          !e.metaKey &&
+          !/INPUT|TEXTAREA/.test(document.activeElement?.tagName || "")
+        ) {
           openMenu();
         }
         return;
       }
-      if (e.key === "Escape") { closeMenu(); return; }
+      if (e.key === "Escape") {
+        closeMenu();
+        return;
+      }
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
         e.preventDefault();
         setFocus(focusIdx + (e.key === "ArrowDown" ? 1 : -1));
         SoundFX.play("tick");
       }
-      if (e.key === "Home") { setFocus(0); SoundFX.play("tick"); }
-      if (e.key === "End") { setFocus(items.length - 1); SoundFX.play("tick"); }
+      if (e.key === "Home") {
+        setFocus(0);
+        SoundFX.play("tick");
+      }
+      if (e.key === "End") {
+        setFocus(items.length - 1);
+        SoundFX.play("tick");
+      }
     });
   }
 })();

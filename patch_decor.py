@@ -64,7 +64,7 @@ def patch_page(path, jobs):
     io.open(path, "w", encoding="utf-8", newline="\n").write(s)
     print(path, "decorated:", len(jobs))
 
-# index.html — anchor right after each section's opening tag
+# index.html - anchor right after each section's opening tag
 patch_page("index.html", [
     ('<section class="poster-section" id="poster" aria-labelledby="poster-title">',
      '  <img class="decor decor--hide-sm" src="assets/decor/star.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:2%;--dy:10%;--ds:64px;--dr:14deg;--do:.45">\n'
@@ -94,7 +94,7 @@ s = s.replace(a, a + '\n'
 io.open("index.html", "w", encoding="utf-8", newline="\n").write(s)
 print("index.html hero decorated")
 
-# outputs.html — page head + one decor per output spread
+# outputs.html - page head + one decor per output spread
 patch_page("outputs.html", [
     ('<section class="page-head">',
      '  <img class="decor decor--hide-sm" src="assets/decor/bow.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:88%;--dy:16%;--ds:84px;--dr:-8deg;--do:.5">\n'
@@ -129,7 +129,7 @@ assert k == 4, k
 io.open("outputs.html", "w", encoding="utf-8", newline="\n").write(s)
 print("outputs.html spreads decorated:", k)
 
-# synthesis.html — page head + team
+# synthesis.html - page head + team
 patch_page("synthesis.html", [
     ('<section class="page-head">',
      '  <img class="decor decor--hide-sm" src="assets/decor/heart-bow.svg" alt="" aria-hidden="true" loading="lazy" style="--dx:90%;--dy:14%;--ds:66px;--dr:-12deg;--do:.5">\n'

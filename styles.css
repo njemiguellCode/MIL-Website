@@ -1,12 +1,12 @@
 /* ============================================================
-   O.R.A.I. — Overreliance on Artificial Intelligence
+   O.R.A.I. - Overreliance on Artificial Intelligence
    Y2K × FRUTIGER AERO × JAPANESE EDITORIAL × CYBER CHROME
    Color DNA: group poster (deep indigo → periwinkle, white)
    "What if our poster became a futuristic digital magazine?"
    ============================================================ */
 
 :root {
-  /* Poster palette — dominant */
+  /* Poster palette - dominant */
   --indigo-deep: #1000a0;
   --indigo-electric: #2514a7;
   --indigo-muted: #3f31b2;
@@ -15,7 +15,7 @@
   --white: #fcfcfd;
   --lavender: #c6cae4;
 
-  /* Accents — small doses only */
+  /* Accents - small doses only */
   --cyan: #0aa9e7;
   --green: #7aa384;
   --orange-red: #dd5338;
@@ -171,7 +171,7 @@ h2 em,
 }
 
 /* ============================================================
-   ATMOSPHERE — layered indigo depth, noise, scanlines
+   ATMOSPHERE - layered indigo depth, noise, scanlines
    ============================================================ */
 .atmosphere {
   position: fixed;
@@ -362,7 +362,7 @@ h2 em,
   );
 }
 
-/* Digital noise + scanlines — fixed editorial texture layers */
+/* Digital noise + scanlines - fixed editorial texture layers */
 .noise,
 .scanlines {
   position: fixed;
@@ -386,7 +386,7 @@ h2 em,
 }
 
 /* ============================================================
-   NAV — translucent chrome rail
+   NAV - translucent chrome rail
    ============================================================ */
 .nav {
   position: fixed;
@@ -640,7 +640,7 @@ h2 em,
 }
 
 /* ============================================================
-   EDITORIAL PRIMITIVES — hud, dots, chips, stickers, rules
+   EDITORIAL PRIMITIVES - hud, dots, chips, stickers, rules
    ============================================================ */
 .hud {
   display: inline-flex;
@@ -713,7 +713,7 @@ h2 em,
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Stickers — rotated chrome-edged badges */
+/* Stickers - rotated chrome-edged badges */
 .sticker {
   display: inline-flex;
   align-items: center;
@@ -749,7 +749,7 @@ h2 em,
   border-color: rgba(252, 252, 253, 0.5);
 }
 
-/* Badge — flat mono label */
+/* Badge - flat mono label */
 .badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -762,7 +762,7 @@ h2 em,
   border-radius: 2px;
 }
 
-/* Vertical rail label — Japanese magazine side text */
+/* Vertical rail label - Japanese magazine side text */
 .rail-label {
   position: absolute;
   top: 0;
@@ -791,7 +791,7 @@ h2 em,
   border-top-color: var(--line);
 }
 
-/* Glass — translucent panel */
+/* Glass - translucent panel */
 .glass {
   background: var(--glass-fill);
   border: 1px solid var(--glass-edge);
@@ -802,7 +802,7 @@ h2 em,
 }
 
 /* ============================================================
-   SECTION SCAFFOLD — numbers, titles, giant words
+   SECTION SCAFFOLD - numbers, titles, giant words
    ============================================================ */
 section {
   position: relative;
@@ -851,7 +851,7 @@ section {
   -webkit-text-stroke: 0;
 }
 
-/* Giant background words — cropped, drifting on scroll */
+/* Giant background words - cropped, drifting on scroll */
 .giant {
   position: absolute;
   font-family: var(--font-display);
@@ -899,7 +899,7 @@ section {
 }
 
 /* ============================================================
-   BUTTONS — glossy Y2K chrome
+   BUTTONS - glossy Y2K chrome
    ============================================================ */
 .btn {
   position: relative;
@@ -991,7 +991,7 @@ section {
 }
 
 /* ============================================================
-   HERO — the magazine cover
+   HERO - the magazine cover
    ============================================================ */
 .hero {
   position: relative;
@@ -1162,7 +1162,7 @@ section {
   z-index: 3;
 }
 
-/* cover poster — overlaps the title block */
+/* cover poster - overlaps the title block */
 .hero__cover {
   position: relative;
   z-index: 1;
@@ -1232,7 +1232,7 @@ section {
 }
 
 /* ============================================================
-   REVEAL — scroll entrance
+   REVEAL - scroll entrance
    ============================================================ */
 .reveal {
   opacity: 0;
@@ -1362,7 +1362,7 @@ section {
 }
 
 /* ============================================================
-   POSTER SECTION — exhibit spread
+   POSTER SECTION - exhibit spread
    ============================================================ */
 .poster-section {
   padding: clamp(5rem, 10vh, 8.5rem) 0;
@@ -1464,8 +1464,40 @@ section {
   z-index: 3;
 }
 
+.purpose {
+  padding: clamp(4rem, 9vh, 7rem) 0;
+  border-top: 1px solid var(--line-faint);
+  border-bottom: 1px solid var(--line-faint);
+  background: linear-gradient(180deg, rgba(16, 0, 160, 0.14), transparent 60%);
+}
+.purpose__inner {
+  position: relative;
+  z-index: 1;
+}
+.purpose__content {
+  max-width: 62rem;
+}
+.purpose__title {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--white);
+}
+.purpose__text {
+  margin: 0;
+  max-width: 48rem;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
 /* ============================================================
-   MANIFESTO — editorial pull-quote spread
+   MANIFESTO - editorial pull-quote spread
    ============================================================ */
 .manifesto {
   padding: clamp(5rem, 12vh, 9rem) 0;
@@ -1543,7 +1575,7 @@ section {
 }
 
 /* ============================================================
-   THE ISSUE — threat briefing, asymmetric grid
+   THE ISSUE - threat briefing, asymmetric grid
    ============================================================ */
 .issue {
   padding: clamp(5rem, 10vh, 8.5rem) 0;
@@ -1575,7 +1607,7 @@ section {
   box-shadow: 0 0 34px -8px rgba(10, 169, 231, 0.35);
   transform: translateY(-4px);
 }
-/* asymmetric spans — magazine rhythm, no uniform card rows */
+/* asymmetric spans - magazine rhythm, no uniform card rows */
 .issue-card:nth-child(1) {
   grid-column: 1 / span 7;
 }
@@ -1625,7 +1657,7 @@ section {
 }
 
 /* ============================================================
-   SELF-CHECK — diagnostic module
+   SELF-CHECK - diagnostic module
    ============================================================ */
 .signals {
   padding: clamp(5rem, 10vh, 8.5rem) 0;
@@ -1793,7 +1825,7 @@ section {
 }
 
 /* ============================================================
-   PROTOCOL — countermeasures
+   PROTOCOL - countermeasures
    ============================================================ */
 .protocol {
   padding: clamp(5rem, 10vh, 8.5rem) 0;
@@ -2007,7 +2039,7 @@ section {
 }
 
 /* ============================================================
-   APC OUTPUT SPREADS — outputs.html
+   APC OUTPUT SPREADS - outputs.html
    ============================================================ */
 .page-head {
   position: relative;
@@ -2135,7 +2167,7 @@ section {
   margin-top: 1.6rem;
 }
 
-/* media slot — chrome frame with placeholder art */
+/* media slot - chrome frame with placeholder art */
 .media-slot {
   position: relative;
   border: 1px solid var(--glass-edge-bright);
@@ -2327,7 +2359,7 @@ section {
 }
 
 /* ============================================================
-   TEAM — futuristic editorial profiles
+   TEAM - futuristic editorial profiles
    ============================================================ */
 .team {
   padding: clamp(4.5rem, 9vh, 7.5rem) 0;
@@ -3264,8 +3296,13 @@ body.is-booting {
   left: 0;
   right: 0;
   height: 14px;
-  background:
-    radial-gradient(circle at 8px -4px, transparent 10px, rgba(198, 202, 228, 0.14) 11px, transparent 12px) repeat-x;
+  background: radial-gradient(
+      circle at 8px -4px,
+      transparent 10px,
+      rgba(198, 202, 228, 0.14) 11px,
+      transparent 12px
+    )
+    repeat-x;
   background-size: 16px 14px;
   pointer-events: none;
   z-index: 2;
@@ -3273,7 +3310,8 @@ body.is-booting {
 
 /* soft magenta accent glow on the heart decorations */
 img.decor[src*="heart"] {
-  filter: drop-shadow(0 0 10px rgba(214, 82, 148, 0.45)) drop-shadow(0 0 22px rgba(214, 82, 148, 0.2));
+  filter: drop-shadow(0 0 10px rgba(214, 82, 148, 0.45))
+    drop-shadow(0 0 22px rgba(214, 82, 148, 0.2));
 }
 
 /* bow bullets on the "what we should all do" checklist */
@@ -3303,11 +3341,19 @@ img.decor[src*="heart"] {
   background: url("assets/decor/rosette.svg") no-repeat center / contain;
   opacity: 0.55;
 }
-.footer__baseline-inner p:first-child { order: 2; }
-.footer__baseline-inner .footer__build { order: 3; margin-left: auto; }
+.footer__baseline-inner p:first-child {
+  order: 2;
+}
+.footer__baseline-inner .footer__build {
+  order: 3;
+  margin-left: auto;
+}
 
 /* bow bullets on the resources list (visible on home) */
-.link-list li { position: relative; padding-left: 1.5rem; }
+.link-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
 .link-list li::before {
   content: "";
   position: absolute;
@@ -3331,7 +3377,11 @@ img.decor[src*="heart"] {
 }
 .explorer {
   position: relative;
-  background: linear-gradient(180deg, rgba(244, 246, 255, 0.92), rgba(214, 222, 250, 0.86));
+  background: linear-gradient(
+    180deg,
+    rgba(244, 246, 255, 0.92),
+    rgba(214, 222, 250, 0.86)
+  );
   border: 1px solid rgba(252, 252, 253, 0.9);
   border-radius: 10px;
   box-shadow:
@@ -3345,8 +3395,14 @@ img.decor[src*="heart"] {
   animation: explorer-in 0.7s var(--ease) both;
 }
 @keyframes explorer-in {
-  from { opacity: 0; transform: translateY(14px) scale(0.97); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .explorer__bar {
   display: flex;
@@ -3366,9 +3422,15 @@ img.decor[src*="heart"] {
   border: 1px solid rgba(0, 0, 0, 0.15);
   flex: none;
 }
-.explorer__dot--r { background: #ff7a9c; }
-.explorer__dot--y { background: #ffd76e; }
-.explorer__dot--g { background: #8fe3a6; }
+.explorer__dot--r {
+  background: #ff7a9c;
+}
+.explorer__dot--y {
+  background: #ffd76e;
+}
+.explorer__dot--g {
+  background: #8fe3a6;
+}
 .explorer__title {
   margin-left: 0.4rem;
   font-weight: 600;
@@ -3378,13 +3440,20 @@ img.decor[src*="heart"] {
 }
 .explorer__glitch {
   margin-left: auto;
-  color: #0AA9E7;
+  color: #0aa9e7;
   font-weight: 700;
   animation: glitch-shift 2.2s steps(2) infinite;
 }
 @keyframes glitch-shift {
-  0%, 100% { transform: translateX(0); opacity: 0.9; }
-  50% { transform: translateX(2px); opacity: 0.6; }
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(2px);
+    opacity: 0.6;
+  }
 }
 .explorer__controls {
   display: flex;
@@ -3424,16 +3493,32 @@ img.decor[src*="heart"] {
   place-items: center;
   padding: 0.9rem;
   background:
-    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.7), transparent 40%),
-    repeating-linear-gradient(0deg, rgba(90, 99, 199, 0.05) 0 1px, transparent 1px 14px),
-    repeating-linear-gradient(90deg, rgba(90, 99, 199, 0.05) 0 1px, transparent 1px 14px),
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 255, 255, 0.7),
+      transparent 40%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(90, 99, 199, 0.05) 0 1px,
+      transparent 1px 14px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(90, 99, 199, 0.05) 0 1px,
+      transparent 1px 14px
+    ),
     linear-gradient(180deg, #edeffc, #dfe4f8);
 }
 .explorer__scan {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: repeating-linear-gradient(0deg, rgba(16, 0, 160, 0.06) 0 2px, transparent 2px 4px);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(16, 0, 160, 0.06) 0 2px,
+    transparent 2px 4px
+  );
   mix-blend-mode: overlay;
 }
 .explorer__img {
@@ -3442,7 +3527,9 @@ img.decor[src*="heart"] {
   height: auto;
   max-width: 100%;
   border-radius: 5px;
-  box-shadow: 0 0 0 1px rgba(16, 0, 160, 0.15), 0 6px 18px rgba(16, 0, 160, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(16, 0, 160, 0.15),
+    0 6px 18px rgba(16, 0, 160, 0.18);
   image-rendering: auto;
 }
 .explorer__status {
@@ -3462,7 +3549,7 @@ img.decor[src*="heart"] {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: #0AA9E7;
+  color: #0aa9e7;
   font-weight: 700;
 }
 .explorer__live i {
@@ -3472,11 +3559,22 @@ img.decor[src*="heart"] {
   background: currentColor;
   animation: live-blink 1.2s steps(1) infinite;
 }
-@keyframes live-blink { 50% { opacity: 0.25; } }
+@keyframes live-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
 
 /* --- responsive: shrink the window on small screens --- */
 @media (max-width: 720px) {
-  .hero__cover { width: min(300px, 92%); }
-  .explorer__controls { gap: 0.3rem; }
-  .explorer__ctrl { width: 1.2rem; height: 1.2rem; }
+  .hero__cover {
+    width: min(300px, 92%);
+  }
+  .explorer__controls {
+    gap: 0.3rem;
+  }
+  .explorer__ctrl {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
